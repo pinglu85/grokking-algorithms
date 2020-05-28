@@ -1,6 +1,4 @@
-my_list = [1, 4, 8, 9, 10, 23, 40]
-
-
+# Binary Search
 def binary_search(list, item):
     low = 0
     high = len(list) - 1
@@ -16,5 +14,10 @@ def binary_search(list, item):
     return None
 
 
-result = binary_search(my_list, 4)
-print(result)
+my_list = [1, 4, 8, 9, 10, 23, 40]
+name_list = ['Adam', 'Liwen', 'Lu', 'Maren', 'Nathen', 'Sarah', 'Yang']
+
+print(binary_search(my_list, 4))
+
+
+print(binary_search(name_list, 'Liwen'))
