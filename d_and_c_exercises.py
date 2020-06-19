@@ -33,18 +33,18 @@ print(max([2, 5, 4]))
 
 # 4.4 Recursive binary search
 def binary_search(list, target, offset=0):
-    mid = (0 + len(list) - 1) // 2
-    if list == []:
-        return None
-    elif list[mid] == target:
-        return mid + offset
+    if len(list) == 1:
+        return offset if list[0] == target else None
     else:
         start = 0
         end = len(list)
-        if list[mid] < target:
+        mid = (0 + len(list) - 1) // 2
+        if list[mid] == target:
+            return mid + offset
+        elif list[mid] < target:
             start = mid + 1
             offset += start
-        elif list[mid] > target:
+        else:
             end = mid
         return binary_search(list[start:end], target, offset)
 
