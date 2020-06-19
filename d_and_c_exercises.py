@@ -38,7 +38,7 @@ def binary_search(list, target, offset=0):
     else:
         start = 0
         end = len(list)
-        mid = (0 + len(list) - 1) // 2
+        mid = (start + end - 1) // 2
         if list[mid] == target:
             return mid + offset
         elif list[mid] < target:
@@ -57,3 +57,6 @@ print(binary_search([1, 4, 8, 10, 99, 100, 110], 4))  # 1
 print(binary_search([1, 4, 8, 10, 99, 100, 110], 8))  # 2
 print(binary_search([1, 4, 8, 10, 99, 100, 110], 10))  # 3
 print(binary_search([1, 4, 8, 10, 99, 100, 110], 11))  # None
+print(binary_search([1, 4, 8, 9, 10, 12, 50, 99, 100, 110], 99))  # 7
+print(binary_search([1, 4, 8, 9, 10, 12, 50, 99, 100, 110], 8))  # 2
+print(binary_search([1, 4, 8, 9, 10, 12, 50, 99, 100, 110], 110))  # 9
